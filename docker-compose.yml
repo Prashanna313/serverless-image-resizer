@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  image-resizer:
+    build: .
+    volumes:
+      - ./src:/app
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    ports:
+      - "8080:8080"
